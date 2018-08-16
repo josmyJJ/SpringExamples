@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+</head>
+<body>
+
+<h1>To Do List</h1>
+<a href="/add">Add an item</a><br />
+
+<!--This is a tymeleaf loop-->
+<div th:each="list : ${lists}">
+    <h4 th:text="${list.what}"></h4>
+    <ul>
+         <li th:inline="text">Due date: [[${list.dueDate}]]</li>
+         <li th:inline="text">Priority: [[${list.priority}]]</li>
+    </ul>
+
+    <!--th:text="${list.dueDate}"-->
+    <!--<h4 th:inline="text">[[${list.what}]] @ [[${list.dueDate}]]</h4>-->
+    <!--<p th:text="${list.priority}"></p>-->
+</div>
+</body>
+</html>

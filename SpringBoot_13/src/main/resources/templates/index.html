@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery List</title>
+</head>
+<body>
+
+<h1>Grocery List</h1>
+
+<div th:each="category : ${grocery}">
+    <h3 th:text="${category.category}"></h3>
+    <ul>
+        <th:block  th:each="list : ${category.lists}">
+            <li th:inline="text"><strong>[[${list.name}]],</strong> quantity -
+                [[${list.quantity}]]</li>
+        </th:block>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Food List</title>
+</head>
+<body>
+
+<h1>Favorite Food</h1>
+<a href="/add">Add a food</a>
+
+<div th:each="food : ${allFood}">
+
+    <h3 th:inline="text">Food : [[${food.name}]]</h3>
+    <h4 th:inline="text">Cuisine : [[${food.cuisine}]]</h4>
+
+    <div th:if="${food.foodImage} != null">
+        <img style="max-width:500px;" th:src="${food.foodImage}" />
+    </div>
+
+    <p th:inline="text">Why do you like it : [[${food.description}]]</p>
+    <hr />
+
+</div>
+</body>
+</html>

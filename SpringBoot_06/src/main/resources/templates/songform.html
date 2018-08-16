@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Song Form</title>
+</head>
+<body>
+
+<h1>Song Form</h1>
+
+<!--th:action: indicates what should happen when the submit button is pressed-->
+
+<!--th:object: indicates that the form’s values will be saved in the  -->
+<!--object called “song”, which was passed from the controller.-->
+<form action="#" th:action="@{/songform}" th:object="${song}" method="post">
+    Name: <input type="text" th:field="*{name}" /><br /> <!-- th:field:
+    indicates that the value that is entered into an element corresponds to
+    the value of the Song object referred to as song in the html template.-->
+    Artist: <input type="text" th:field="*{artist}" /><br />
+    <!--*{} is a Thymeleaf selection expression that refers to a previously defined -->
+    <!--object, and indicates that all fields that are being referred to are from -->
+    <!--that object.-->
+    Album: <input type="text" th:field="*{album}" /><br />
+    Rating: <input type="number" th:field="*{rating}" /><br />
+    Year: <input type="number" th:field="*{year}" /><br />
+    <input type="submit" value="Submit" />
+
+    <!--When user clicks the submit button then the form values will be sent
+    via a POST request to “/songform”. This will access the processSongForm
+    method.-->
+</form>
+
+</body>
+</html>

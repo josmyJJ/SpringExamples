@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Page</title>
+</head>
+<body>
+<h1>Spring Boot Lesson 4 Example</h1>
+
+<form action="#" th:action="@{/processform}" method="post">
+    Login: <input type="text" name="name" />
+
+    <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>

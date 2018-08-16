@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Form</title>
+</head>
+<body>
+
+<h1>Add your favorite food</h1>
+
+<form method="POST" action="/add" th:object="${food}"
+      enctype="multipart/form-data"> <!-- additional data is going to be
+      posted with the form -->
+    Name: <input type="text" th:field="*{name}" /> <br/>
+    Cuisine: <input type="text" th:field="*{cuisine}" /> <br/>
+    Why: <textarea rows="3" type="text" th:field="*{description}" /> <br/>
+    <input type="file" name="file" /><br/><br/>
+    <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>
